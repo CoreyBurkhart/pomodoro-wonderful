@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 class Lock extends Component {
 
-
   render() {
     return (
       <div className="col-md-12">
