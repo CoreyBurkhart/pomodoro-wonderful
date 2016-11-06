@@ -16,21 +16,10 @@ class Body extends Component {
 
   lockHandler(e) {
     this.setState({'locked': !this.state.locked});
-    console.log(this.state.locked);
-    if (this.state.locked === true) {
-      //send the times to the Clock component
-    }
   }
 
   inputHandler(event) {
-    if (event.target.id === 'Work') {
-      this.setState({'locked': this.state.locked, 'Work': event.target.value, 'Break': this.state.Break});
-    }
-    else{
-      this.setState({'locked': this.state.locked, 'Work': this.state.Work, 'Break':  event.target.value})
-
-    }
-    console.log(this.state);
+    event.target.id === 'Work' ? this.setState({'Work': event.target.value}) : this.setState({'Break':  event.target.value});
   }
 
   render() {

@@ -5,17 +5,25 @@ class Clock extends Component {
     super(props);
     //hours minutes seconds will be in state
     //set the initial state to times locked in
-    this.state = {'time': this.setClock()};
+    this.state = {'time': this.setClock(props)};
   }
 
-  componentDidMount() {
-    this.timerID = setInterval( () => this.tick(), 1000);
+  componentWillReceiveProps(nextProps) {
+    console.log('componentWillRecieveProps fired')
+    this.setState({'time': this.setClock(nextProps)});
+    
+    //trigger the timer if the button is pressed
+    if(nextProps.info.locked) {
+      this.timerID = setInterval( () => this.tick(), 1000);
+    } else {
+      clearInterval(this.timerID);
+    }
   }
 
-  setClock() {
-    const work = Number.parseInt(this.props.info.Work, null);
-    let work_hours = work > 60 ? Math.floor(work / 60) : 0;
-    let work_minutes = work <= 60 ? work : work % 60;
+  setClock(time) {
+    time = Number.parseInt(time.info.Work);
+    let work_hours = time > 60 ? Math.floor(time / 60) : 0;
+    let work_minutes = time <= 60 ? time : time % 60;
     let work_seconds = 0;
     return [work_hours, work_minutes, work_seconds];
   }
