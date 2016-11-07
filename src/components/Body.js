@@ -23,13 +23,14 @@ class Body extends Component {
   }
 
   render() {
+    let locked = this.state.locked ? 'locked' : 'unlocked';
     return (
       <div className="row sliders">
         <div className='col-md-8 col-md-offset-2'>
           <Slider  value={this.state.Work} min='0' max={this.ranges.Work} title="Work" disabled={this.state.locked} inputHandler={this.inputHandler}/>
           <Slider  value={this.state.Break} min='0' max={this.ranges.Break} title="Break" disabled={this.state.locked} inputHandler={this.inputHandler} />
         </div>
-        <Lock click={this.lockHandler}/>
+        <Lock click={this.lockHandler} locked={locked}/>
         <Clock info={this.state} />
       </div>
     );

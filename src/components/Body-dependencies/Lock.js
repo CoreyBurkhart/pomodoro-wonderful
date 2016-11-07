@@ -5,7 +5,7 @@ class Lock extends Component {
   render() {
     return (
       <div className="col-md-12">
-        <button onClick={this.props.click}>Lock</button>
+        <button onClick={this.props.click}>{this.props.locked}</button>
       </div>
     )
   }
