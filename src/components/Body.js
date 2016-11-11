@@ -11,6 +11,7 @@ export default class Body extends Component {
     super();
     this.rangeChangeHandler = this.rangeChangeHandler.bind(this);
     this.reset = this.reset.bind(this);
+    this.textInputHandler = this.textInputHandler.bind(this);
     this.toggleStart = this.toggleStart.bind(this);
     this.rangesMax = {'Work': 120, 'Break': 30};
     this.state = {'started': false,  'isBreak': false, 'isWork': true, 'workVal': this.rangesMax.Work / 2, 'breakVal': this.rangesMax.Break / 2, 'time': this.setTime(this.rangesMax.Work * 60 / 2)};
@@ -35,7 +36,7 @@ export default class Body extends Component {
 
     let hours = minutes > 60 ? Math.floor(minutes / 60) : 0;
     minutes = minutes <= 60 ? minutes : minutes % 60;
-    let seconds = timeInSeconds - (minutes * 60);
+    let seconds = timeInSeconds - (minutes * 60) - (hours * 60 * 60);
     timeInSeconds--;
     return [hours, minutes, seconds, timeInSeconds];
   }
@@ -50,6 +51,20 @@ export default class Body extends Component {
         clearInterval(this.timerID);
       }
     this.setState({'started': !this.state.started})
+  }
+
+  textInputHandler(e) {
+    //test to see if 3 or less digits
+    let re = /\d\d?\d?/g;
+    let pass = re.test(e.target.value);
+
+    if(e.target.className === 'Work' && pass) {
+      console.log('state set for work timer: ', e.target.value);
+      this.setState({'time': this.setTime(e.target.value * 60), 'workVal': e.target.value});
+    }
+    else if (pass) {
+      this.setState({'breakVal': e.target.value});
+    }
   }
 
 
@@ -75,9 +90,9 @@ export default class Body extends Component {
   reset(e) {
     if(this.state.started === true) {
       this.toggleStart();
-      if(this.state.isBreak) {
-        this.setState({'isBreak': false});
-      }
+    }
+    if(this.state.isBreak) {
+      this.setState({'isBreak': false});
     }
     this.setState({'time': this.setTime(this.state.workVal * 60)});
   }
@@ -88,8 +103,8 @@ export default class Body extends Component {
     return (
       <div className="row sliders">
         <div className='col-md-8 col-md-offset-2'>
-          <Slider  title="Work" passedState={this.state}  value={this.state.workVal} rangeChangeHandler={this.rangeChangeHandler} />
-          <Slider  title="Break" passedState={this.state} value={this.state.breakVal} rangeChangeHandler={this.rangeChangeHandler} />
+          <Slider  title="Work" passedState={this.state}  value={this.state.workVal} rangeChangeHandler={this.rangeChangeHandler} textInputHandler={this.textInputHandler}/>
+          <Slider  title="Break" passedState={this.state} value={this.state.breakVal}  textInputHandler={this.textInputHandler} rangeChangeHandler={this.rangeChangeHandler} />
         </div>
         <button className='btn' onClick={this.reset}>Reset</button>
         <Clock  passedState={this.state} toggleStart={this.toggleStart}/>
