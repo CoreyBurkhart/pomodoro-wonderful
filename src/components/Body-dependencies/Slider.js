@@ -6,8 +6,9 @@ class Slider extends Component {
     return (
       <div className="col-md-6">
         <label htmlFor={this.props.title}> {this.props.title} </label>
-        <input type='range' min={this.props.min} id={this.props.title} max={this.props.max} onInput={this.props.inputHandler} disabled={this.props.disabled}/>
+        <input type='range' min={this.props.min} id={this.props.title} max={this.props.max} onInput={this.props.rangeChangeHandler} disabled={this.props.passedState.started} />
         <span>{this.props.value}</span>
+        {/* <input type='text' style={{}}></input> */}
       </div>
     )
   }
