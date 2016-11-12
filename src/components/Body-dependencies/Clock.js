@@ -3,6 +3,11 @@ import '../../css/clock.css';
 
 class Clock extends Component {
 
+  constructor() {
+    super();
+    this.canvasSize = 400;
+  }
+
   componentDidMount() {
     this.updateCanvas(this.props);
   }
@@ -27,15 +32,18 @@ class Clock extends Component {
       numeratorBreak = denominator;
     }
 
-    ctx.strokeStyle = 'orange';
+    let offset = this.canvasSize / 2;
+    let radiusW = Math.round(this.canvasSize / 2) - 10;
+
+    ctx.strokeStyle = '#3498db';
+    ctx.lineWidth = '15';
+    ctx.beginPath();
+    ctx.arc(offset , offset, radiusW, 0, (numeratorWork / denominator) * 2*Math.PI);
+    ctx.stroke();
+    ctx.strokeStyle = '#9b59b6';
     ctx.lineWidth = '25';
     ctx.beginPath();
-    ctx.arc(250,250,225,0, (numeratorWork / denominator) * 2*Math.PI);
-    ctx.stroke();
-    ctx.strokeStyle = 'green';
-    ctx.lineWidth = '35';
-    ctx.beginPath();
-    ctx.arc(250,250,195,0, (numeratorBreak / denominator) * 2*Math.PI);
+    ctx.arc(offset,offset, radiusW - 15 ,0, (numeratorBreak / denominator) * 2*Math.PI);
     ctx.stroke();
   }
 
@@ -45,28 +53,31 @@ class Clock extends Component {
     let timer_minutes =  this.props.passedState.time[1];
     let timer_seconds = this.props.passedState.time[2];
     let inline = {display: 'inline-block'};
-    let size = 500;
+      // let width = window.innerWidth;
+      // if(width < 400) {
+      //   this.canvasSize = 400;
+      // }
 
     return (
-      <div onClick={this.props.toggleStart} className="col-sm-12 col-md-12 text-center">
+      <div onClick={this.props.toggleStart} className="clock-container col-sm-12 col-md-12 text-center">
         <div className="display">
           <h3>{this.props.passedState.isBreak ? 'Break' : 'Work'}</h3>
-            <span style={{display: 'inline-block', padding: '0 1.5rem 0 3rem'}}>
+            <span className="numbers" style={{display: 'inline-block', padding: '0 1.5rem 0 3rem'}}>
               {timer_hours}
-              <p>Hours</p>
+              <small>Hours</small>
             </span>
             <span style={inline}>:</span>
-            <span style={{display: 'inline-block', padding: '0 1.5rem'}}>
+            <span className="numbers" style={{display: 'inline-block', padding: '0 1.5rem'}}>
               {timer_minutes}
-              <p>Minutes</p>
+              <small>Minutes</small>
             </span>
             <span style={inline}>:</span>
-            <span style={{display: 'inline-block', padding: '0 1.5rem'}}>
+            <span className="numbers" style={{display: 'inline-block', padding: '0 1.5rem'}}>
               {timer_seconds}
-              <p>Seconds</p>
+              <small>Seconds</small>
             </span>
           </div>
-        <canvas ref="canvas" className='absolute' width={size} height={size} ></canvas>
+        <canvas ref="canvas" width={this.canvasSize} height={this.canvasSize} ></canvas>
       </div>
     )
   }

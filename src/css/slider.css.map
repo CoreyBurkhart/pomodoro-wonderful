@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAQ,6DAAqD;ACE7D,OAAQ;EACN,MAAM,EAAE,MAAM;EACd,wDAAiC;IAC/B,SAAS,EDFA,IAAI;ICGb,WAAW,EAAE,MAAM;EAErB,qBAAc;IACZ,OAAO,EAAE,MAAM;IACf,2BAAM;MACJ,SAAS,EAAE,KAAK;MAChB,MAAM,EAAE,IAAI;MACZ,OAAO,EAAE,IAAI;IAEf,0BAAK;MACH,MAAM,EAAE,OAAO;EAGnB,gDAAiC;IAC/B,KAAK,EDZI,OAAO;ECclB,kDAAmC;IACjC,KAAK,EDdK,OAAO",
+"sources": ["../scss/variables.scss","../scss/slider.scss"],
 "names": [],
 "file": "slider.css"
 }

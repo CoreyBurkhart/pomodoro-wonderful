@@ -47,11 +47,15 @@ class Slider extends Component {
 
   render() {
     return (
-      <div className="col-md-6">
-        <label htmlFor={this.props.title}> {this.props.title} </label>
+      <div className="slider col-sm-12 ">
+      <div className={'row ' + this.props.title}>
+        <label className='col-sm-2' htmlFor={this.props.title}> {this.props.title} </label>
+        <div className="col-sm-2 col-sm-offset-8 range-number">
+          <span ref='span' onClick={this.toggleTextInput}>{this.props.value}</span>
+          <input type='text' ref='text' className={this.props.title} style={{display: 'none'}} onBlur={this.toggleTextInput} maxLength="3" onKeyPress={this.keypressHandler} disabled={this.props.passedState.started}></input>
+        </div>
+        </div>
         <input type='range' min={this.props.min} id={this.props.title} max={this.props.max} onInput={this.props.rangeChangeHandler} disabled={this.props.passedState.started} />
-        <span ref='span' onClick={this.toggleTextInput}>{this.props.value}</span>
-        <input type='text' ref='text' className={this.props.title} style={{display: 'none'}} onBlur={this.toggleTextInput} maxLength="3" onKeyPress={this.keypressHandler} disabled={this.props.passedState.started}></input>
       </div>
     )
   }

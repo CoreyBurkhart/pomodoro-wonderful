@@ -1,26 +1,23 @@
-.absolute {
-  position: absolute;
-  top: 10%;
-  left: calc(50% - 250px);
-  transform: rotate(-90deg); }
-
-h3 {
-  font-size: 5rem; }
-
-.display {
-  position: absolute;
-  top: 180px;
-  left: calc(50% - 130px); }
-
-.display-number {
-  font-size: 4rem;
-  font-weight: bold;
-  letter-spacing: 5px; }
-
-.display-number > small {
-  display: block;
-  font-size: 15px;
-  font-weight: normal;
-  letter-spacing: normal; }
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.clock-container {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0; }
+  .clock-container .display {
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 125px);
+    left: 0; }
+    .clock-container .display h3 {
+      font-size: 5rem;
+      padding: 2rem 0; }
+    .clock-container .display .numbers {
+      font-size: 5rem; }
+    .clock-container .display small {
+      display: block;
+      font-size: 1.4rem; }
+  .clock-container canvas {
+    transform: rotate(-90deg); }
 
 /*# sourceMappingURL=clock.css.map */

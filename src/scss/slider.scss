@@ -1,0 +1,26 @@
+@import "variables";
+
+.slider {
+  margin: 4rem 0;
+  label, span, .range-number input {
+    font-size: $font-large;
+    font-weight: normal;
+  }
+  .range-number {
+    display: inline;
+    input {
+      max-width: 10rem;
+      border: none;
+      outline: none;
+    }
+    span {
+      cursor: pointer;
+    }
+  }
+  .Work label, .Work .range-number {
+    color: $work-color;
+  }
+  .Break label, .Break .range-number {
+    color: $break-color;
+  }
+}

@@ -1,3 +1,20 @@
-
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.slider {
+  margin: 4rem 0; }
+  .slider label, .slider span, .slider .range-number input {
+    font-size: 5rem;
+    font-weight: normal; }
+  .slider .range-number {
+    display: inline; }
+    .slider .range-number input {
+      max-width: 10rem;
+      border: none;
+      outline: none; }
+    .slider .range-number span {
+      cursor: pointer; }
+  .slider .Work label, .slider .Work .range-number {
+    color: #3498db; }
+  .slider .Break label, .slider .Break .range-number {
+    color: #9b59b6; }
 
 /*# sourceMappingURL=slider.css.map */

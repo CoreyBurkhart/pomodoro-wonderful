@@ -101,13 +101,13 @@ export default class Body extends Component {
   render() {
 
     return (
-      <div className="row sliders">
-        <div className='col-md-8 col-md-offset-2'>
-          <Slider  title="Work" passedState={this.state}  value={this.state.workVal} rangeChangeHandler={this.rangeChangeHandler} textInputHandler={this.textInputHandler}/>
-          <Slider  title="Break" passedState={this.state} value={this.state.breakVal}  textInputHandler={this.textInputHandler} rangeChangeHandler={this.rangeChangeHandler} />
-        </div>
+      <div className="row">
         <button className='btn' onClick={this.reset}>Reset</button>
         <Clock  passedState={this.state} toggleStart={this.toggleStart}/>
+          <div className='slider-container col-md-8 col-md-offset-2'>
+            <Slider  title="Work" passedState={this.state}  value={this.state.workVal} rangeChangeHandler={this.rangeChangeHandler} textInputHandler={this.textInputHandler}/>
+            <Slider  title="Break" passedState={this.state} value={this.state.breakVal}  textInputHandler={this.textInputHandler} rangeChangeHandler={this.rangeChangeHandler} />
+          </div>
       </div>
     );
   }
