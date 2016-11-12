@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../css/slider.css';
 
 class Slider extends Component {
   constructor() {
