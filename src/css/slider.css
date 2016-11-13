@@ -9,12 +9,75 @@
     .slider .range-number input {
       max-width: 10rem;
       border: none;
-      outline: none; }
+      outline: none;
+      background: #dde4e6; }
     .slider .range-number span {
       cursor: pointer; }
   .slider .Work label, .slider .Work .range-number {
-    color: #3498db; }
+    color: #34495e;
+    text-shadow: -1px -2px #c0cdd1; }
   .slider .Break label, .slider .Break .range-number {
-    color: #9b59b6; }
+    color: #34495e;
+    text-shadow: -1px -2px #c0cdd1; }
+
+.Work + input[type=range]::-webkit-slider-thumb {
+  background-color: #3498db; }
+
+.Break + input[type=range]::-webkit-slider-thumb {
+  background-color: #9b59b6; }
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin-top: 2rem;
+  width: 100%;
+  background: transparent; }
+
+input[type=range]:focus {
+  outline: none; }
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  cursor: pointer;
+  margin-top: -10px;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 1px 3px 5px 0 #333; }
+
+input[type=range]::-moz-range-thumb {
+  height: 30px;
+  width: 15px;
+  border-radius: 2px;
+  border: 1px solid #333;
+  cursor: pointer;
+  margin-top: 0px;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 1px 1px 2px 0 #333; }
+
+input[type=range]::-ms-thumb {
+  height: 30px;
+  width: 15px;
+  border-radius: 2px;
+  border: 1px solid #333;
+  cursor: pointer;
+  margin-top: 0px;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 1px 1px 2px 0 #333; }
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent; }
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 2px;
+  background-color: #b1c2c6;
+  cursor: pointer;
+  height: 10px;
+  border-radius: 5px; }
 
 /*# sourceMappingURL=slider.css.map */

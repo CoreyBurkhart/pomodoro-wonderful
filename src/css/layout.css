@@ -4,4 +4,8 @@
   margin: 0;
   padding: 0; }
 
+body {
+  min-height: 100%;
+  background-color: #dde4e6; }
+
 /*# sourceMappingURL=layout.css.map */

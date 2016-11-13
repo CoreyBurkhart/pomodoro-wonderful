@@ -8,16 +8,36 @@
     position: absolute;
     width: 100%;
     top: calc(50% - 125px);
-    left: 0; }
+    left: 0;
+    color: #34495e;
+    text-shadow: -1px -2px #c0cdd1; }
     .clock-container .display h3 {
       font-size: 5rem;
-      padding: 2rem 0; }
+      padding: 0 0 2rem 0; }
     .clock-container .display .numbers {
       font-size: 5rem; }
     .clock-container .display small {
       display: block;
-      font-size: 1.4rem; }
+      font-size: 1.4rem;
+      text-shadow: none; }
   .clock-container canvas {
-    transform: rotate(-90deg); }
+    transform: rotate(-90deg);
+    z-index: 2;
+    background: transparent; }
+
+.hover {
+  width: 325px;
+  height: 325px;
+  position: absolute;
+  top: 37px;
+  left: calc(50% - 163.5px);
+  border-radius: 100%;
+  z-index: 5; }
+
+.pause:hover {
+  background-color: rgba(243, 156, 18, 0.5); }
+
+.start:hover {
+  background-color: rgba(46, 204, 113, 0.5); }
 
 /*# sourceMappingURL=clock.css.map */

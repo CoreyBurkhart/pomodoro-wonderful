@@ -53,10 +53,7 @@ class Clock extends Component {
     let timer_minutes =  this.props.passedState.time[1];
     let timer_seconds = this.props.passedState.time[2];
     let inline = {display: 'inline-block'};
-      // let width = window.innerWidth;
-      // if(width < 400) {
-      //   this.canvasSize = 400;
-      // }
+    let hoverClass = this.props.passedState.started ? 'pause' : 'start';
 
     return (
       <div onClick={this.props.toggleStart} className="clock-container col-sm-12 col-md-12 text-center">
@@ -77,6 +74,7 @@ class Clock extends Component {
               <small>Seconds</small>
             </span>
           </div>
+        <div className={"hover " + hoverClass}></div>
         <canvas ref="canvas" width={this.canvasSize} height={this.canvasSize} ></canvas>
       </div>
     )

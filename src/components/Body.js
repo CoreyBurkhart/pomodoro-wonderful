@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from './Body-dependencies/Slider';
 import Clock from './Body-dependencies/Clock';
+import '../css/body.css';
 
 
 
@@ -88,6 +89,7 @@ export default class Body extends Component {
   }
 
   reset(e) {
+    console.log('reset ran');
     if(this.state.started === true) {
       this.toggleStart();
     }
@@ -102,8 +104,10 @@ export default class Body extends Component {
 
     return (
       <div className="row">
-        <button className='btn' onClick={this.reset}>Reset</button>
-        <Clock  passedState={this.state} toggleStart={this.toggleStart}/>
+        <Clock  passedState={this.state} resetClock={this.reset} toggleStart={this.toggleStart}/>
+        <div className="col-sm-12 text-center">
+          <button className='' onClick={this.reset}><span className="glyphicon glyphicon-repeat" aria-hidden="true" alt="reset"></span></button>
+        </div>
           <div className='slider-container col-md-8 col-md-offset-2'>
             <Slider  title="Work" passedState={this.state}  value={this.state.workVal} rangeChangeHandler={this.rangeChangeHandler} textInputHandler={this.textInputHandler}/>
             <Slider  title="Break" passedState={this.state} value={this.state.breakVal}  textInputHandler={this.textInputHandler} rangeChangeHandler={this.rangeChangeHandler} />
