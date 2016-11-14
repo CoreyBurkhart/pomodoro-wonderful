@@ -1,4 +1,11 @@
-<<<<<<< HEAD
+Install:
+  <code>(sudo) npm install </code>
+
+Watch scss for changes & start server
+  <code>npm start</code>
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

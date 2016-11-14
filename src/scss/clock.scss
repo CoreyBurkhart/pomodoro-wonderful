@@ -41,12 +41,15 @@
   left: calc(50% - 163.5px);
   border-radius: 100%;
   z-index: 5;
+  transition: all .3s;
 }
 
 .pause:hover {
-  background-color: rgba(243, 156, 18, 0.5);
+  transition: all .3s;
+  background-color: $pause-color;
 }
 
 .start:hover {
-  background-color: rgba(46, 204, 113, 0.5);
+  transition: all .3s;
+  background-color: $start-color;
 }

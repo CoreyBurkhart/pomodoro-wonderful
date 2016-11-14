@@ -78,6 +78,35 @@ input[type=range]::-webkit-slider-runnable-track {
   background-color: #b1c2c6;
   cursor: pointer;
   height: 10px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  transition: all .3s; }
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  transition: all .3s;
+  background-color: #94aab0; }
+
+input[type=range]::-moz-range-track {
+  height: 2px;
+  background-color: #b1c2c6;
+  cursor: pointer;
+  height: 10px;
+  border-radius: 5px;
+  transition: all .3s; }
+
+input[type=range]:focus::-moz-range-track {
+  transition: all .3s;
+  background-color: #94aab0; }
+
+input[type=range]::-ms-track {
+  height: 2px;
+  background-color: #b1c2c6;
+  cursor: pointer;
+  height: 10px;
+  border-radius: 5px;
+  transition: all .3s; }
+
+input[type=range]:focus::-ms-track {
+  transition: all .3s;
+  background-color: #94aab0; }
 
 /*# sourceMappingURL=slider.css.map */

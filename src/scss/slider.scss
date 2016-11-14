@@ -101,16 +101,38 @@ input[type=range]::-webkit-slider-runnable-track {
   cursor: pointer;
   height: 10px;
   border-radius: 5px;
+  transition: all .3s;
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-
+  transition: all .3s;
+  background-color: darken($background-color, 25%);
 }
-
+//firefox
 input[type=range]::-moz-range-track {
-
+  height: 2px;
+  background-color: darken($background-color, 15%);
+  cursor: pointer;
+  height: 10px;
+  border-radius: 5px;
+  transition: all .3s;
 }
 
+input[type=range]:focus::-moz-range-track {
+  transition: all .3s;
+  background-color: darken($background-color, 25%);
+}
+//IE
 input[type=range]::-ms-track {
+  height: 2px;
+  background-color: darken($background-color, 15%);
+  cursor: pointer;
+  height: 10px;
+  border-radius: 5px;
+  transition: all .3s;
+}
 
+input[type=range]:focus::-ms-track {
+  transition: all .3s;
+  background-color: darken($background-color, 25%);
 }
