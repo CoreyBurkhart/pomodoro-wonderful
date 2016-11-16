@@ -15,6 +15,6 @@ button span {
   color: #34495e; }
 button span:hover {
   transition: all .3s;
-  color: #e67e22; }
+  transform: rotate(360deg); }
 
 /*# sourceMappingURL=body.css.map */

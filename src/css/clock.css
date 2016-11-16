@@ -9,8 +9,7 @@
     width: 100%;
     top: calc(50% - 125px);
     left: 0;
-    color: #34495e;
-    text-shadow: -1px -2px #c0cdd1; }
+    color: #34495e; }
     .clock-container .display h3 {
       font-size: 5rem;
       padding: 0 0 2rem 0; }
@@ -18,29 +17,39 @@
       font-size: 5rem; }
     .clock-container .display small {
       display: block;
-      font-size: 1.4rem;
-      text-shadow: none; }
+      font-size: 1.4rem; }
   .clock-container canvas {
     transform: rotate(-90deg);
     z-index: 2;
     background: transparent; }
 
 .hover {
+  display: table;
   width: 325px;
   height: 325px;
+  font-size: 12rem;
+  color: white;
   position: absolute;
   top: 37px;
   left: calc(50% - 163.5px);
   border-radius: 100%;
   z-index: 5;
   transition: all .3s; }
+  .hover .glyphicon-pause, .hover .glyphicon-play {
+    display: table-cell;
+    opacity: 0;
+    vertical-align: middle; }
 
 .pause:hover {
   transition: all .3s;
-  background-color: rgba(243, 156, 18, 0.2); }
+  background: rgba(163, 182, 187, 0.25); }
+  .pause:hover .glyphicon-pause {
+    opacity: 100; }
 
 .start:hover {
   transition: all .3s;
-  background-color: rgba(46, 204, 113, 0.2); }
+  background: rgba(163, 182, 187, 0.25); }
+  .start:hover .glyphicon-play {
+    opacity: 100; }
 
 /*# sourceMappingURL=clock.css.map */

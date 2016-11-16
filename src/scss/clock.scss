@@ -11,7 +11,6 @@
     top: calc(50% - 125px);
     left: 0;
     color: $text-color;
-    text-shadow: -1px -2px darken($background-color, 10%);
     h3 {
       font-size: 5rem;
       padding: 0 0 2rem 0;
@@ -22,7 +21,6 @@
     small {
       display: block;
       font-size: 1.4rem;
-      text-shadow: none;
     }
   }
   canvas {
@@ -34,22 +32,36 @@
 }
 
 .hover {
+  display: table;
   width: 325px;
   height: 325px;
+  font-size: 12rem;
+  color: white;
   position: absolute;
   top: 37px;
   left: calc(50% - 163.5px);
   border-radius: 100%;
   z-index: 5;
   transition: all .3s;
+  .glyphicon-pause , .glyphicon-play {
+    display: table-cell;
+    opacity: 0;
+    vertical-align: middle;
+  }
 }
 
 .pause:hover {
   transition: all .3s;
-  background-color: $pause-color;
+  background: transparentize($hover-color, .75);
+  .glyphicon-pause {
+    opacity: 100;
+  }
 }
 
 .start:hover {
   transition: all .3s;
-  background-color: $start-color;
+  background: transparentize($hover-color, .75);
+  .glyphicon-play {
+    opacity: 100;
+  }
 }
